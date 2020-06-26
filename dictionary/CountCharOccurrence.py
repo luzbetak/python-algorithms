@@ -8,17 +8,11 @@ def count_char_occurrence(string):
 
     print(dict1)
 
-  # seen = set()
-  # for s in l:
-  #   if s in seen:
-  #     print(s)
-  #     break
-  #
+
 # --------------------------------------------------------------------- #
 if __name__ == "__main__":
 
-    # count_char_occurrence("hello world")
-    # count_char_occurrence("This is a test")
+    count_char_occurrence("hello world")
 
 # --------------------------------------------------------------------- #
 # OUTPUT:
@@ -26,3 +20,9 @@ if __name__ == "__main__":
 # {'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1}
 # {'T': 1, 'h': 1, 'i': 2, 's': 3, ' ': 3, 'a': 1, 't': 2, 'e': 1}
 # --------------------------------------------------------------------- #
+# seen = set()
+# for s in l:
+#   if s in seen:
+#     print(s)
+#     break
+#
