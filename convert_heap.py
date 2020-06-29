@@ -3,7 +3,7 @@
 class HeapConverter(object):
 
 	def __init__(self, heap):
-		#represent the heap with a one-dimensional array
+		#represent the queue with a one-dimensional array
 		self.heap = heap;
 	
 	def transform(self):
@@ -20,7 +20,7 @@ class HeapConverter(object):
 			
 		return heap
 		
-	#argument is the index of an internal node in the heap
+	#argument is the index of an internal node in the queue
 	def heapify(self, index):
 	
 		#index of the left child

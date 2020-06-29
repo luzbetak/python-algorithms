@@ -12,11 +12,11 @@ def is_min_heap(heap):
 	for i in range(0,last_internal_node_index):
 	
 		#node with index i has left child 2*i+1 and right child 2*i+2 in the array representation
-		#we just have to check one by one whether the heap property is violated or not
+		#we just have to check one by one whether the queue property is violated or not
 		if heap[i]>heap[2*i+1] or heap[i]>heap[2*i+2]:
 			return False
 
-	#the array represents a min heap
+	#the array represents a min queue
 	return True
 	
 if __name__ == "__main__":		
