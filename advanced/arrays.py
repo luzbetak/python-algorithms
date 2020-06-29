@@ -18,7 +18,7 @@ numbers = [10,20,300,40.5,50];
 
 #print(numbers[:-2]);
 
-# O(N) search running time   
+# O(N) search-trees running time
 maximum = numbers[0];
 for num in numbers:
 	if num > maximum:

@@ -16,7 +16,7 @@ class TreeComparator(object):
 
 class Node(object):
 
-	#a binary search tree has a left node (smaller values) and a right node (greater values)
+	#a binary search-trees tree has a left node (smaller values) and a right node (greater values)
 	def __init__(self, data):
 		self.data = data;
 		self.left_child = None;

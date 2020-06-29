@@ -7,8 +7,8 @@ class Node(object):
 		self.visited = False;
 		self.predecessor = None;
 		
-class DepthFirstSearch(object): # BFS -> queue + layer by layer algorithm   DFS -> stack + goes as deep aspossible into the tree !!!
-
+# BFS -> queue + layer by layer algorithm   DFS -> stack + goes as deep aspossible into the tree !!!
+class DepthFirstSearch(object):
 	def dfs(self, node):
 	
 		node.visited = True;
@@ -17,8 +17,7 @@ class DepthFirstSearch(object): # BFS -> queue + layer by layer algorithm   DFS 
 		for n in node.adjacenciesList:
 			if not n.visited:
 				self.dfs(n);
-		
-	
+
 node1 = Node("A");
 node2 = Node("B");
 node3 = Node("C");
