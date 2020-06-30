@@ -11,27 +11,27 @@ class Vertex():
 	def __str__(self):
 		return self.name
 		
-class Edge():
+class Edge:
 
-	def __init__(self, weight, startVertex, targetVertex):
+	def __init__(self, weight, start_vertex, target_vertex):
 		self.weight = weight
-		self.startVertex = startVertex
-		self.targetVertex = targetVertex	
+		self.startVertex = start_vertex
+		self.targetVertex = target_vertex
 		
 	def __lt__(self, other):
-		selfPriority = self.weight;
-		otherPriority = other.weight;
-		return selfPriority < otherPriority;
+		self_priority = self.weight;
+		other_priority = other.weight;
+		return self_priority < other_priority;
 	
-class PrimsJarnik():
+class Prims:
 
-	def __init__(self, unvisitedList):
-		self.unvisitedList = unvisitedList
+	def __init__(self, my_unvisited_list):
+		self.unvisitedList = my_unvisited_list
 		self.spanningTree = []
 		self.edgeHeap = []
 		self.fullCost = 0
 		
-	def calculateSpanningTree(self, vertex):
+	def calculate_spanning_tree(self, vertex):
 		self.unvisitedList.remove(vertex);
 		while self.unvisitedList:
 		
@@ -39,7 +39,7 @@ class PrimsJarnik():
 				if edge.targetVertex in self.unvisitedList:
 					heapq.heappush(self.edgeHeap, edge);
 
-			minEdge  = heapq.heappop(self.edgeHeap);
+			minEdge = heapq.heappop(self.edgeHeap);
 
 			if minEdge.targetVertex in self.unvisitedList:
 				self.spanningTree.append(minEdge)      
@@ -48,7 +48,7 @@ class PrimsJarnik():
 				vertex = minEdge.targetVertex
 				self.unvisitedList.remove(vertex)
 
-	def getSpanningTree(self):
+	def get_spanning_tree(self):
 		return self.spanningTree
 		
 	def getCost(self):
@@ -86,15 +86,8 @@ edgeGD = Edge(5, vertexG, vertexD)
 edgeFG = Edge(3, vertexF, vertexG)
 edgeGF = Edge(3, vertexG, vertexF)
  
-unvisitedList = []
-unvisitedList.append(vertexA)
-unvisitedList.append(vertexB)
-unvisitedList.append(vertexC)
-unvisitedList.append(vertexD)
-unvisitedList.append(vertexE)
-unvisitedList.append(vertexF)
-unvisitedList.append(vertexG)
- 
+unvisited_list = [vertexA, vertexB, vertexC, vertexD, vertexE, vertexF, vertexG]
+
 vertexA.adjacencyList.append(edgeAB)
 vertexA.adjacencyList.append(edgeAC)
 vertexA.adjacencyList.append(edgeAE)
@@ -106,6 +99,7 @@ vertexC.adjacencyList.append(edgeCA)
 vertexC.adjacencyList.append(edgeCD)
 vertexC.adjacencyList.append(edgeCF)
 vertexD.adjacencyList.append(edgeDB)
+
 vertexD.adjacencyList.append(edgeDC)
 vertexD.adjacencyList.append(edgeDE)
 vertexD.adjacencyList.append(edgeDG)
@@ -118,6 +112,6 @@ vertexF.adjacencyList.append(edgeFG)
 vertexG.adjacencyList.append(edgeGD)
 vertexG.adjacencyList.append(edgeGF)
  
-algorithm = PrimsJarnik(unvisitedList)
-algorithm.calculateSpanningTree(vertexD)
+algorithm = Prims(unvisited_list)
+algorithm.calculate_spanning_tree(vertexD)
 print(algorithm.getCost())

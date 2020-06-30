@@ -4,7 +4,7 @@ class HeapConverter(object):
 
 	def __init__(self, heap):
 		#represent the queue with a one-dimensional array
-		self.heap = heap;
+		self.heap = heap
 	
 	def transform(self):
 	
@@ -12,11 +12,11 @@ class HeapConverter(object):
 		index = (len(self.heap)-2)//2
 		
 		#conider the internal node in a reverse order
-		while index>=0:
+		while index >= 0:
 			#we "heapify" all the internal nodes: we check whether the parent is smaller than the children
 			#if not: than we swap the nodes accordingly
 			self.heapify(index)
-			index=index-1
+			index = index-1
 			
 		return heap
 		
