@@ -8,7 +8,7 @@ def reverse_array(nums):
 	end_index = len(nums)-1
 
 	#while the end_index is greater than the start_index
-	while end_index>start_index:
+	while end_index > start_index:
 		#swap the two items
 		nums[start_index],nums[end_index] = nums[end_index], nums[start_index]
 		#increment the start_index
@@ -24,3 +24,4 @@ if __name__ == "__main__":
 	nums = [1,2,3,4,5]
 	
 	print(reverse_array(nums))
+	
