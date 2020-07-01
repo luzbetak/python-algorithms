@@ -1,10 +1,9 @@
 # -------------------------------------------------- #
 # ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']
 # -------------------------------------------------- #
-
+import pprint as pp
 from collections import defaultdict
 a_list = ["eat", "tea", "tan", "ate", "nat", "bat"]
-print(a_list)
 a_dict = defaultdict(list)
 
 for x in a_list:
@@ -18,4 +17,5 @@ for key, value in a_dict.items():
 # ['a', 'n', 't']  ->  ['tan', 'nat']
 # ['a', 'b', 't']  ->  ['bat']
 # -------------------------------------------------- #
+pp.pprint(a_dict)
 
