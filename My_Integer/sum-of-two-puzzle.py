@@ -2,9 +2,9 @@
 def two_sum(nums, sum_target):
     my_set = {}
     for pos, value in enumerate(nums):
-        reminder = sum_target - value
-        if reminder in my_set:
-            return [my_set[reminder], pos]
+        remainder = sum_target - value
+        if remainder in my_set:
+            return [my_set[remainder], pos]
         my_set[value] = pos
     return []
 
