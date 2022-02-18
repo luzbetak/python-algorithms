@@ -1,11 +1,11 @@
 # -------------------------------------------------- #
-def two_sum(nums, target):
-    seen = {}
-    for i, v in enumerate(nums):
-        remaining = target - v
-        if remaining in seen:
-            return [seen[remaining], i]
-        seen[v] = i
+def two_sum(nums, sum):
+    my_set = {}
+    for pos, value in enumerate(nums):
+        reminder = sum - value
+        if reminder in my_set:
+            return [my_set[reminder], pos]
+        my_set[value] = pos
     return []
 
 
