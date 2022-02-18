@@ -1,8 +1,8 @@
 # -------------------------------------------------- #
-def two_sum(nums, sum):
+def two_sum(nums, sum_target):
     my_set = {}
     for pos, value in enumerate(nums):
-        reminder = sum - value
+        reminder = sum_target - value
         if reminder in my_set:
             return [my_set[reminder], pos]
         my_set[value] = pos
