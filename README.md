@@ -1,6 +1,9 @@
 Algorithms
 ==========
 
+## Python Naming Convention
+https://github.com/naming-convention/naming-convention-guides/tree/master/python
+
 ## Data pretty printer
 ```
 import pprint
