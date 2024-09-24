@@ -1,6 +1,5 @@
 import random
 
-
 # ----------------------------------------------------------------------#
 def find_element():
     my_tuple = ("kevin", "thomas", "luzbetak")

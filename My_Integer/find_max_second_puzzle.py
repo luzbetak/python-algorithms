@@ -1,5 +1,4 @@
 # Find largest and second-largest integer
-
 my_list = [4, 2, 7, 9, 2]
 
 

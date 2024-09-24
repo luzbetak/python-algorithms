@@ -2,7 +2,6 @@ import pprint
 
 pp = pprint.PrettyPrinter(indent=2)
 
-
 # --------------------------------------------------------------------- #
 # Output:
 # 2

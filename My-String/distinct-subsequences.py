@@ -1,3 +1,8 @@
+# -------------------------------------------------------------------------------------------------------------------- #
+# This Python code generates all distinct subsequences of a given string and stores them in a set.
+# A subsequence is a sequence derived from another sequence by deleting some or no elements without
+# changing the order of the remaining elements. Here’s a breakdown of how the code works:
+# -------------------------------------------------------------------------------------------------------------------- #
 def distinct_subsequences(str2, set2):
     if len(str2) == 0:
         return
@@ -10,7 +15,7 @@ def distinct_subsequences(str2, set2):
             t = list(str2).copy()
             t.remove(str2[char])
             t = ''.join(t)
-            distinct_subsequences(set2, t)
+            distinct_subsequences(t, set2)
 
     return
 
@@ -23,6 +28,7 @@ if __name__ == "__main__":
 
     for i in sorted(set1):
         print(i)
+
 
 """ OUTPUT:
 a
