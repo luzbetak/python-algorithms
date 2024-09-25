@@ -1,4 +1,3 @@
-#!/bin/python3
 
 import json
 from typing import List, Dict

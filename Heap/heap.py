@@ -10,7 +10,7 @@ class Heap(object):
 	def insert(self, item):
 	
 		if self.isFull():
-			print("My-Heap is full..");
+			print("Heap is full..");
 			return 
 			
 		self.currentPosition = self.currentPosition + 1

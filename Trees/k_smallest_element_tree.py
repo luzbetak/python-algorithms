@@ -1,33 +1,58 @@
-class TreeComparator(object):
-
-    def compare_trees(self, node1, node2):
-
-        # we have to check the base cases (it may be the child of a leaf node so we have to use ==)
-        if not node1 or not node2:
-            return node1 == node2
-
-        # if the values within the nodes are not the same we return false (trees are not the same)
-        if node1.data is not node2.data:
-            return False
-
-        # the left subtree values AND the right subtree values must match as well !!!
-        return self.compare_trees(node1.left_child, node2.left_child) and self.compare_trees(node1.right_child,
-                                                                                             node2.right_child)
-
-
 class Node(object):
 
-    # a binary Search-Trees tree has a left node (smaller values) and a right node (greater values)
+    # a binary Trees tree has a left node (smaller values) and a right node (greater values)
     def __init__(self, data):
         self.data = data;
         self.left_child = None;
         self.right_child = None;
+
+    def __str__(self):
+        return str(self.data)
 
 
 class BinarySearchTree(object):
 
     def __init__(self):
         self.root = None;
+
+    # this is the method we will call to find the k-th smallest item
+    def find_smallest(self, k):
+        return self.get_k_smallest(self.root, k)
+
+    def get_k_smallest(self, node, k):
+
+        # number of nodes in the left subtree
+        # +1 because we count the root node of the subtree as well
+        n = self.tree_size(node.left_child) + 1
+
+        # this is when we find the kth smallest item
+        if n == k:
+            return node
+
+        # if the number of nodes in the left subtree > k-th smallest item
+        # it means the k-th smallest item is in the left subtree
+        if n > k:
+            return self.get_k_smallest(node.left_child, k)
+
+        # if the number of nodes in the left subtree is smaller then the k-th
+        # smallest item then we can discard the left subtree and consider the
+        # right substree
+        # NOW WE ARE NOT LOOKING FOR THE K-TH BUT THE K-Nth SMALLEST ITEM
+        if n < k:
+            return self.get_k_smallest(node.right_child, k - n)
+
+        return None
+
+    # calculate the size of a subtree with root node 'node'
+    def tree_size(self, node):
+
+        # this is the base case (when the node is a child of a leaf node so it is NULL)
+        if node is None:
+            return 0
+
+        # recursively sum up the size of the left subtree + size of right subtree
+        # size of tree = size left subtree + size of right subtree + 1 (because of the root)
+        return self.tree_size(node.left_child) + self.tree_size(node.right_child) + 1
 
     # inserting items in the tree O(logN) running time
     def insert(self, data):
@@ -168,19 +193,11 @@ class BinarySearchTree(object):
 
 
 if __name__ == "__main__":
-    bst1 = BinarySearchTree();
+    bst = BinarySearchTree();
 
-    bst1.insert(10);
-    bst1.insert(13);
-    bst1.insert(2);
-    bst1.insert(14);
+    bst.insert(100)
+    bst.insert(13)
+    bst.insert(50)
+    bst.insert(14)
 
-    bst2 = BinarySearchTree();
-
-    bst2.insert(10);
-    bst2.insert(13);
-    bst2.insert(2);
-    bst2.insert(14);
-
-    comparator = TreeComparator()
-    print(comparator.compare_trees(bst1.root, bst2.root))
+    print(bst.find_smallest(4))

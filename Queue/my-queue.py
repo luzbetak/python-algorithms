@@ -1,4 +1,4 @@
-# The Python My-Queue functions
+# The Python Queue functions
 from collections import deque
 
 # create a new empty deque object that will function as a My-Queue
